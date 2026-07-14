@@ -1,0 +1,418 @@
+/* =========================================================
+   TerraSystcm - Shared Dashboard Design System
+   Based on the Committee dashboard's sidebar layout.
+   Used by every role dashboard + review page so the whole
+   system shares one visual language instead of several.
+   ========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#eef3ff;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#111827;
+}
+
+/* ---------- Sidebar ---------- */
+
+.app-sidebar{
+    width:260px;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    background:#0f172a;
+    color:white;
+    padding:28px 22px;
+    display:flex;
+    flex-direction:column;
+    overflow-y:auto;
+}
+
+.app-sidebar .brand{
+    font-size:20px;
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.app-sidebar .role-tag{
+    font-size:12px;
+    color:#94a3b8;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:24px;
+}
+
+.app-sidebar .user-box{
+    background:rgba(255,255,255,0.06);
+    border-radius:12px;
+    padding:14px 16px;
+    margin-bottom:26px;
+}
+
+.app-sidebar .user-box .u-label{
+    font-size:12px;
+    color:#94a3b8;
+}
+
+.app-sidebar .user-box .u-name{
+    font-weight:700;
+    font-size:15px;
+    margin-top:2px;
+}
+
+.app-sidebar nav{
+    display:flex;
+    flex-direction:column;
+}
+
+.app-sidebar nav a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#cbd5e1;
+    text-decoration:none;
+    padding:12px 14px;
+    border-radius:10px;
+    margin-bottom:6px;
+    font-weight:500;
+    font-size:15px;
+    transition:background .15s ease, color .15s ease;
+}
+
+.app-sidebar nav a:hover{
+    background:#1e293b;
+    color:white;
+}
+
+.app-sidebar nav a.active{
+    background:#2563eb;
+    color:white;
+}
+
+.app-sidebar .logout-link{
+    margin-top:auto;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#fca5a5;
+    text-decoration:none;
+    padding:12px 14px;
+    border-radius:10px;
+    font-weight:600;
+}
+
+.app-sidebar .logout-link:hover{
+    background:rgba(220,38,38,0.15);
+}
+
+/* ---------- Main content area ---------- */
+
+.app-main{
+    margin-left:260px;
+    padding:35px 40px;
+    min-height:100vh;
+}
+
+.page-header{
+    margin-bottom:30px;
+}
+
+.page-header h2{
+    font-size:26px;
+    font-weight:800;
+    color:#0f172a;
+}
+
+.page-header p{
+    color:#6b7280;
+    margin-top:4px;
+}
+
+.alert-banner{
+    padding:14px 20px;
+    border-radius:12px;
+    margin-bottom:24px;
+    font-weight:600;
+}
+
+.alert-banner.success{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.alert-banner.error{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+/* ---------- Stat cards ---------- */
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:22px;
+    margin-bottom:35px;
+}
+
+.stat-card{
+    background:white;
+    border-radius:18px;
+    padding:26px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+.stat-number{
+    font-size:36px;
+    font-weight:800;
+}
+
+.stat-title{
+    margin-top:6px;
+    color:#6b7280;
+    font-size:16px;
+}
+
+.stat-number.pending{ color:#0f172a; }
+.stat-number.approved{ color:#16a34a; }
+.stat-number.rejected{ color:#dc2626; }
+
+/* ---------- Cards / tables shared by all dashboards ---------- */
+
+.card{
+    border:none;
+    border-radius:18px;
+    background:white;
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom:25px;
+}
+
+.card .card-body{
+    padding:26px 30px;
+}
+
+.table{
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+}
+
+.badge.bg-pending, .badge.bg-warning{
+    background:#f59e0b !important;
+    color:white;
+}
+
+.badge.bg-approved, .badge.bg-success{
+    background:#16a34a !important;
+    color:white;
+}
+
+.badge.bg-rejected, .badge.bg-danger{
+    background:#dc2626 !important;
+    color:white;
+}
+
+/* ---------- Application cards (citizen / DO officer) ---------- */
+
+.application-card{
+    background:white;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:22px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+.application-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:22px;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.app-id{
+    font-size:18px;
+    font-weight:800;
+    color:#111827;
+}
+
+.app-type{
+    color:#6b7280;
+    font-size:15px;
+}
+
+.application-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-bottom:22px;
+}
+
+.info-label{
+    color:#6b7280;
+    font-size:14px;
+    margin-bottom:4px;
+}
+
+.info-value{
+    font-weight:700;
+    color:#111827;
+}
+
+.review-btn, .service-btn{
+    background:#0f172a;
+    color:white;
+    border:none;
+    text-decoration:none;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    padding:13px 20px;
+    border-radius:12px;
+    font-weight:700;
+}
+
+.review-btn{
+    width:100%;
+}
+
+.review-btn:hover, .service-btn:hover{
+    background:#2563eb;
+    color:white;
+}
+
+/* ---------- Citizen service cards ---------- */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:22px;
+    margin-bottom:45px;
+}
+
+.service-card{
+    background:white;
+    border-radius:20px;
+    padding:28px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
+    transition:transform .2s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-4px);
+}
+
+.service-icon{
+    width:58px;
+    height:58px;
+    border-radius:14px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    color:white;
+    margin-bottom:18px;
+}
+
+.service-icon.blue{ background:#2563eb; }
+.service-icon.green{ background:#16a34a; }
+.service-icon.purple{ background:#9333ea; }
+.service-icon.orange{ background:#ea580c; }
+.service-icon.indigo{ background:#4f46e5; }
+
+.service-title{
+    font-size:20px;
+    font-weight:800;
+    margin-bottom:8px;
+    color:#111827;
+}
+
+.service-description{
+    font-size:15px;
+    color:#6b7280;
+    margin-bottom:20px;
+}
+
+/* ---------- Review page (DO Officer / Committee) ---------- */
+
+.review-card{
+    max-width:900px;
+    background:white;
+    padding:36px;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.06);
+}
+
+.btn-approve{
+    background:#16a34a;
+    color:white;
+    border:none;
+}
+
+.btn-approve:hover{
+    background:#15803d;
+    color:white;
+}
+
+.btn-reject{
+    background:#dc2626;
+    color:white;
+    border:none;
+}
+
+.btn-reject:hover{
+    background:#b91c1c;
+    color:white;
+}
+
+textarea.form-control{
+    border-radius:12px;
+}
+
+/* ---------- Empty state ---------- */
+
+.empty-state{
+    text-align:center;
+    color:#6b7280;
+    padding:40px 0;
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:900px){
+
+    .app-sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+        flex-direction:row;
+        flex-wrap:wrap;
+        align-items:center;
+        gap:12px;
+        padding:18px 20px;
+    }
+
+    .app-sidebar nav{
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .app-sidebar .logout-link{
+        margin-top:0;
+    }
+
+    .app-main{
+        margin-left:0;
+        padding:22px;
+    }
+
+    .application-grid, .stats-grid{
+        grid-template-columns:1fr;
+    }
+}
